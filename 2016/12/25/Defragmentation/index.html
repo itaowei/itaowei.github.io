@@ -89,13 +89,6 @@
 
                         
                         <li>
-                            <a href="/about/">我</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archives/">汇总</a>
                         </li>
                         
@@ -104,6 +97,13 @@
                         
                         <li>
                             <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">我</a>
                         </li>
                         
                     
@@ -190,15 +190,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="Project5-Defragmentation"><a href="#Project5-Defragmentation" class="headerlink" title="Project5: Defragmentation"></a>Project5: Defragmentation</h1><p>标签（空格分隔）： coding homework</p>
-<hr>
-<h2 id="Group"><a href="#Group" class="headerlink" title="Group"></a>Group</h2><p>小组成员（学号）</p>
-<ul>
-<li>陶玮（10142130225）  <em>– 注：本次作业讲演人</em></li>
-<li>郭玲燕（10142130224）</li>
-<li>侯之恒（10142130219）</li>
-</ul>
-<hr>
+                <h1 id="Project5-Defragmentation"><a href="#Project5-Defragmentation" class="headerlink" title="Project5: Defragmentation"></a>Project5: Defragmentation</h1><hr>
 <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><ul>
 <li><code>frag</code>: 输入的<fragmented disk="" file="">文件.</fragmented></li>
 <li><code>defrag</code>: 输出的<defragmented disk="" file="">文件.</defragmented></li>
@@ -222,7 +214,7 @@
 </li>
 </ol>
 <p>的<code>inode_buffer</code>数组，存放一级间接索引时的索引块，并按照<code>offset_dtblk</code>的顺序进行排序，方便调用函数<code>fseek()</code>读取<code>frag</code>文件时，尽可能地少用<code>SEEK_SET</code>而用<code>SEEK_CUR</code>，提高<code>fseek()</code>的使用效率。并按照读取顺序，连续地依次存储在<code>defrag</code>的数据区域中。其中结构体中的num用于保存<code>frag</code>中间接索引的顺序，方便标识对应的<code>offset_dtblk</code>，在存储至<code>dafrag</code>时，<code>num</code>也用于表示指针位置。</p>
-<p><em>作者：<a href="http//www.itaowei.cn">陶玮</a></em><br><em>作业来自  <a href="http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html" target="_blank" rel="external">http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html</a></em></p>
+<p><em>作业来自  <a href="http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html" target="_blank" rel="external">http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html</a></em></p>
 
 
                 <hr>
@@ -236,7 +228,9 @@
                     data-title="Defragmentation Homework"
                     data-url="http://itaowei.cn/2016/12/25/Defragmentation/"
                     data-images="http://itaowei.cn/2016/12/25/Defragmentation/homework161225.jpg"
-                    data-content="Project5: Defragmentation标签（空格分隔）： coding homew... | 望城风景 | 陶玮的个人网站 " >
+                    data-content="Project5: Defragmentation
+Overview
+frag: 输入的文件.... | 望城风景 | 陶玮的个人网站 " >
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
                         <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
