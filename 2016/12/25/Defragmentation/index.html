@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="陶玮的个人主页">
+    <meta name="keyword"  content="陶玮">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          Defragmentation Homework - 望城风景 | 陶玮的个人网站
+        
+    </title>
+
+    <link rel="canonical" href="http://itaowei.cn/2016/12/25/Defragmentation/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">望城风景</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archives/">汇总</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">我</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://itaowei.cn/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('homework161225.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#coding - homework" title="coding - homework">coding - homework</a>
+                        
+                    </div>
+                    <h1>Defragmentation Homework</h1>
+                    <h2 class="subheading">README.md</h2>
+                    <span class="meta">
+                        陶玮 写于
+                        2016-12-25
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="Project5-Defragmentation"><a href="#Project5-Defragmentation" class="headerlink" title="Project5: Defragmentation"></a>Project5: Defragmentation</h1><p>标签（空格分隔）： coding homework</p>
+<hr>
+<h2 id="Group"><a href="#Group" class="headerlink" title="Group"></a>Group</h2><p>小组成员（学号）</p>
+<ul>
+<li>陶玮（10142130225）  <em>– 注：本次作业讲演人</em></li>
+<li>郭玲燕（10142130224）</li>
+<li>侯之恒（10142130219）</li>
+</ul>
+<hr>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><ul>
+<li><code>frag</code>: 输入的<fragmented disk="" file="">文件.</fragmented></li>
+<li><code>defrag</code>: 输出的<defragmented disk="" file="">文件.</defragmented></li>
+</ul>
+<ol>
+<li>首先将boot block从<code>frag</code>拷贝至<code>defrag</code>。</li>
+<li>读取<code>frag</code>的<code>superblock</code>，获取块大小<code>blk_size</code>，inodes的个数<code>inode_num</code>，并将<code>frag</code>里面的inode block保存至<code>inodes</code>。</li>
+<li><code>begin_data</code>用于记录<code>data block</code>的起始位置，此时调用函数<code>fseek</code>，使得同时指向<code>frag</code>和<code>defrag</code>的相同位置，即<code>begin_data</code>。</li>
+<li>对inodes逐个进行处理（直至<code>data_blk_num &lt;= 0</code>）：<br>4.1 若<code>inode</code>未使用则跳过不处理。<br>4.2 否则确定该<code>inode</code>对应文件指向的data block个数<code>data_blk_num</code><br>4.3 处理直接索引：按照<code>dblocks</code>顺序读取<code>frag</code>的数据块，然后连续地存储至<code>defrag</code>中，同时更新<code>dblocks</code>的数据。每读取写入一次，<code>data_blk_num</code>减1，以下间接索引同此，遂不赘述。<br>4.4 处理一级间接索引：对于每个<code>iblocks</code>，调用<code>indirect(int offset)</code>进行数据块处理，并更新<code>iblocks</code>的数据写入至<code>defrag</code>中。<br>4.5 处理二级间接索引：首先读取二级索引的地址，将其对应的每个一级索引块调用<code>indirect(int offset)</code>进行数据块处理，并同时更新这些块的一级间接索引数据。最后更新二级索引数据写入至<code>defrag</code>中。<br>4.6 处理三级间接索引：首先读取三级索引的地址，将其对应的每个二级索引块进行形同<em>4.5</em>的处理。</li>
+<li>处理空闲块：改变superblock<code>spblk</code>的<code>free_iblock</code>，将每个空闲块的前4个字节指向下一个空闲块，最后一个置为-1。空闲块其他字节作清零处理。写入至<code>defrag</code>中。</li>
+<li>最后更新superblock和inodes block内容并写入至<code>defrag</code>中。</li>
+<li>注：<code>assert()</code>函数主要用于调试。</li>
+</ol>
+<hr>
+<h2 id="Function-indirect"><a href="#Function-indirect" class="headerlink" title="Function: indirect()"></a>Function: indirect()</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">indirect</span><span class="params">(<span class="keyword">int</span> offset)</span></span></div><div class="line">&#123;   <span class="comment">// this function is used to deal with inodes which have pointers to indirect blocks </span></div><div class="line">	assert(fseek(frag, (offset - offset_frag) * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">	offset_frag = offset + <span class="number">1</span>;</div><div class="line">	</div><div class="line">	<span class="comment">// initialize one-block buffer and store information which is similar to 'dblocks'</span></div><div class="line">	<span class="keyword">int</span> *blkbuf = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(blk_size);</div><div class="line">	assert(fread(blkbuf, blk_size, <span class="number">1</span>, frag) == <span class="number">1</span>);</div><div class="line"></div><div class="line">	<span class="comment">// initialize 'buffer' which is used to store data block information and 'node_buffer'(it has been described above)</span></div><div class="line">	<span class="keyword">int</span> *buffer = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(blk_size);</div><div class="line">	<span class="built_in">memset</span>(buffer, <span class="number">0</span>, blk_size);</div><div class="line">	<span class="built_in">memset</span>(node_buffer, <span class="number">0</span>, <span class="keyword">sizeof</span>(*node_buffer));</div><div class="line"></div><div class="line">	<span class="comment">// n: number of indirect pointers in the one block </span></div><div class="line">	<span class="keyword">int</span> n = (data_blk_num &gt; blk_size/<span class="keyword">sizeof</span>(<span class="keyword">int</span>)) ? blk_size/<span class="keyword">sizeof</span>(<span class="keyword">int</span>) : data_blk_num;</div><div class="line">	</div><div class="line">	<span class="comment">// 'node_buffer' has the value of pointers in this block and its identity</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">	&#123;</div><div class="line">		node_buffer[i].num = i;</div><div class="line">		node_buffer[i].offset_dtblk = blkbuf[i];</div><div class="line">		<span class="comment">// let the 'blkbuf' has new value which will be used in the 'defrag'</span></div><div class="line">		blkbuf[i] = offset_defrag + i;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// the contents of the array 'node_buffer' are sorted</span></div><div class="line">	qsort(node_buffer, n, <span class="keyword">sizeof</span>(node), cmp);</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">	&#123;</div><div class="line">		assert(fseek(frag, (node_buffer[i].offset_dtblk - offset_frag) * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">		offset_frag = node_buffer[i].offset_dtblk + <span class="number">1</span>;</div><div class="line"></div><div class="line">		<span class="comment">// in the 1st time</span></div><div class="line">		<span class="keyword">if</span>(i == <span class="number">0</span>)</div><div class="line">		&#123;</div><div class="line">			assert(fseek(defrag, node_buffer[i].num * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="comment">// not in the 1st time</span></div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			assert(fseek(defrag, (node_buffer[i].num - node_buffer[i<span class="number">-1</span>].num - <span class="number">1</span>) * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">// read the data and store them to 'buffer'</span></div><div class="line">		assert(fread(buffer, blk_size, <span class="number">1</span>, frag) == <span class="number">1</span>);</div><div class="line">		</div><div class="line">		<span class="comment">// store them from 'buffer' to 'defrag'</span></div><div class="line">		assert(fwrite(buffer, blk_size, <span class="number">1</span>, defrag) == <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// return to the position before using the function</span></div><div class="line">	assert(fseek(defrag, (n - <span class="number">1</span> - node_buffer[n<span class="number">-1</span>].num) * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">	</div><div class="line">	data_blk_num -= n;</div><div class="line">	offset_defrag += n;</div><div class="line"></div><div class="line">	<span class="built_in">free</span>(buffer);</div><div class="line"></div><div class="line">	<span class="comment">// the new indirect block</span></div><div class="line">	fwrite(blkbuf, blk_size, <span class="number">1</span>, defrag);</div><div class="line">	<span class="built_in">free</span>(blkbuf);</div><div class="line"></div><div class="line">	offset_defrag++;</div><div class="line">	<span class="keyword">return</span> offset_defrag<span class="number">-1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>代码上有详实的注释啦！  ⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄<br>我就不写啦   (•̀ᴗ•́)و ̑̑<br>重点在下面啦 ( *￣▽￣)</p>
+<hr>
+<h2 id="Efficiency-Optimization"><a href="#Efficiency-Optimization" class="headerlink" title="Efficiency Optimization"></a>Efficiency Optimization</h2><ol>
+<li>本来准备用递归调用函数来处理简介索引的，但考虑到递归算法通常耗时较大，而且本次作业中最多只有三级间接索引，是有限次数的。所以只写了一级间接索引的处理函数，二级，三级间接索引进行转化，for循环调用<code>indirect()</code>即可。</li>
+<li>创建了结构体如下<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// this structure helps using function 'fseek' efficiently</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> NODE</div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> offset_dtblk;	<span class="comment">// offset of pointers to data blocks</span></div><div class="line">	<span class="keyword">int</span> num;			<span class="comment">// number indentify the 'offset_dtblk'</span></div><div class="line">&#125;node;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>的<code>inode_buffer</code>数组，存放一级间接索引时的索引块，并按照<code>offset_dtblk</code>的顺序进行排序，方便调用函数<code>fseek()</code>读取<code>frag</code>文件时，尽可能地少用<code>SEEK_SET</code>而用<code>SEEK_CUR</code>，提高<code>fseek()</code>的使用效率。并按照读取顺序，连续地依次存储在<code>defrag</code>的数据区域中。其中结构体中的num用于保存<code>frag</code>中间接索引的顺序，方便标识对应的<code>offset_dtblk</code>，在存储至<code>dafrag</code>时，<code>num</code>也用于表示指针位置。</p>
+<p><em>作者：<a href="http//www.itaowei.cn">陶玮</a></em><br><em>作业来自  <a href="http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html" target="_blank" rel="external">http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html</a></em></p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="2016/12/25/Defragmentation/"
+                    data-title="Defragmentation Homework"
+                    data-url="http://itaowei.cn/2016/12/25/Defragmentation/"
+                    data-images="http://itaowei.cn/2016/12/25/Defragmentation/homework161225.jpg"
+                    data-content="Project5: Defragmentation标签（空格分隔）： coding homew... | 望城风景 | 陶玮的个人网站 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-qzone flat" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/09/19/test0/" data-toggle="tooltip" data-placement="top" title="这只是一个测试">下一篇 &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="2016/12/25/Defragmentation/"
+                        data-title="Defragmentation Homework"
+                        data-url="http://itaowei.cn/2016/12/25/Defragmentation/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">标签</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#coding - homework" title="coding - homework">coding - homework</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'itaowei';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/itaowei">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/itaowei">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 陶玮 2016 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a><br>
+                    <!--iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe-->
+                    <a href="http://www.miitbeian.gov.cn/">沪ICP备16014180号</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://itaowei.cn/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<!-- Baidu Tongji -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6e6d2788ab579c35c9f8a086a4dc037";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Side Catalog -->
+
+
+
+<!-- Image to hack wechat -->
+<div align="center">
+<img src="img/icon_wechat.jpg" width="0" height="0" /><!--http://itaowei.cn/-->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+</div>
+</body>
+
+</html>
