@@ -86,6 +86,13 @@
 
                         
                         <li>
+                            <a href="/about/">我</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/archives/">汇总</a>
                         </li>
                         
@@ -94,13 +101,6 @@
                         
                         <li>
                             <a href="/tags/">标签</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/about/">我</a>
                         </li>
                         
                     
@@ -213,6 +213,11 @@
 <p>的<code>inode_buffer</code>数组，存放一级间接索引时的索引块，并按照<code>offset_dtblk</code>的顺序进行排序，方便调用函数<code>fseek()</code>读取<code>frag</code>文件时，尽可能地少用<code>SEEK_SET</code>而用<code>SEEK_CUR</code>，提高<code>fseek()</code>的使用效率。并按照读取顺序，连续地依次存储在<code>defrag</code>的数据区域中。其中结构体中的num用于保存<code>frag</code>中间接索引的顺序，方便标识对应的<code>offset_dtblk</code>，在存储至<code>dafrag</code>时，<code>num</code>也用于表示指针位置。</p>
 <p><em>作业来自  <a href="http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html" target="_blank" rel="external">http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html</a></em></p>
 
+                <br>
+                <script id="-mob-share" src="http://itaowei.cn/img/weibo-icon.png"></script><button class="-mob-share-weibo">微博</button>
+                <script id="-mob-share" src="http://itaowei.cn/img/wechat-icon.png"></script><button class="-mob-share-weixin">微信</button>
+                <script id="-mob-share" src="http://itaowei.cn/img/qzone-icon.png"></script><button class="-mob-share-qzone">空间</button>
+                <script id="-mob-share" src="http://itaowei.cn/img/qq-icon.png"></script><button class="-mob-share-qq">空间</button>
 
                 <hr>
 
@@ -223,7 +228,7 @@
                 </section>
 
                 <!--MOB SHARE BEGIN-->
-                <div class="-mob-share-ui-button -mob-share-open">分享</div>
+                <!-- <div class="-mob-share-ui-button -mob-share-open">分享</div>
                 <div class="-mob-share-ui" style="display: none">
                     <ul class="-mob-share-list">
                         <li class="-mob-share-weibo"><p>微博</p></li>
@@ -235,7 +240,7 @@
                 </div>
                 <div class="-mob-share-ui-bg"></div>
                 <script id="-mob-share"
-                src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1db685b4fb16a"></script>
+                src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1db685b4fb16a"></script> -->
                 <style type="text/css">
 				.-mob-share-weibo {
 				background-image: url(http://itaowei.cn/img/weibo-icon.png)!important;
@@ -250,7 +255,6 @@
 				background-image: url(http://itaowei.cn/img/qq-icon.png)!important;
 				}
 				</style>
-				<script id="-mob-share" src="http://itaowei.cn/img/weibo-icon.png"></script><button class="-mob-share-weibo">微博</button>
                 <!--MOB SHARE END-->
 
                         
