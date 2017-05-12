@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="陶玮的个人主页">
+    <meta name="keyword"  content="陶玮">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          或许能助你提高效率的iOS使用技巧（1） - 望城风景 | 陶玮的个人网站
+        
+    </title>
+
+    <link rel="canonical" href="http://itaowei.cn/2017/05/12/iOSeffecitively01/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    <!--Wechat Qcode-->
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">望城风景</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">主页</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">我</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archives/">汇总</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://itaowei.cn/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('iOSeffecitively01.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#效率" title="效率">效率</a>
+                        
+                          <a class="tag" href="/tags/#iOS" title="iOS">iOS</a>
+                        
+                    </div>
+                    <h1>或许能助你提高效率的iOS使用技巧（1）</h1>
+                    <h2 class="subheading">9个有用的iOS交互操作</h2>
+                    <span class="meta">
+                        陶玮 写于
+                        2017-05-12
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="或许能助你提高效率的iOS使用技巧（1）"><a href="#或许能助你提高效率的iOS使用技巧（1）" class="headerlink" title="或许能助你提高效率的iOS使用技巧（1）"></a>或许能助你提高效率的iOS使用技巧（1）</h1><blockquote>
+<p>本文主要针对iOS新手。更多地从有利于提高工作/学习效率的角度进行阐述。</p>
+<h2 id="9个有用的iOS交互操作"><a href="#9个有用的iOS交互操作" class="headerlink" title="9个有用的iOS交互操作"></a>9个有用的iOS交互操作</h2></blockquote>
+<ol>
+<li><p>对于上下滑动的内容，点触屏幕顶端的时间即可”回到顶端”。</p>
+</li>
+<li><p>摇一摇手机进行”撤回”操作.</p>
+</li>
+<li><p>常用的按键操作。</p>
+</li>
+</ol>
+<ul>
+<li>多任务:双击Home键(支持3D Touch的iPhone设备也可以重按屏幕左侧边)</li>
+<li>截屏:同时按下电源键+Home建</li>
+<li>呼出Siri:长按Home</li>
+<li>强制重启:同时长按电源键+Home键持续几秒(iPhone7及以后为电源键+音量减小键)</li>
+</ul>
+<ol>
+<li>Assistive Touch可以方便地将一些按键操作转为触屏操作，且可以自定义设置，设置步骤如下：</li>
+</ol>
+<p><img src="&quot;img_001_01.png&quot;" alt="Assistive Touch 设置"></p>
+<ol>
+<li><p>想要单手操作，却够不着屏幕上方。试试<strong>轻轻</strong>点触Home键两次</p>
+</li>
+<li><p>锁屏状态下，双击Home键呼出Wallet凭证以及Apple Pay</p>
+</li>
+<li><p>大多数情况，从屏幕顶端下拉，直至搜索框出现就<strong>轻轻</strong>放开，即可输入要搜索的内容。常用的单位转换/数值计算也很方便：</p>
+</li>
+</ol>
+<p><img src="&quot;img_001_02.png&quot;" alt="单位转换/数值计算"></p>
+<ol>
+<li>系统自带计算器在横屏模式下变身科学计算器。</li>
+</ol>
+<p><img src="&quot;img_001_03.png&quot;" alt="科学计算器"></p>
+<ol>
+<li>其实很多技巧在”提示”APP里都会介绍。</li>
+</ol>
+<blockquote>
+<p>下篇将介绍一些iOS上有助于提高效率的APP。</p>
+</blockquote>
+<hr>
+<p>如果这篇文章对你有帮助的话，欢迎打赏(一分一角都是爱<i class="icon-heart"></i> )<br>考虑到手机端暂时没能设置出方便的打赏渠道，目前仅限电脑端</p>
+
+                <!--MOB SHARE BEGIN-->
+                <section class="visible-md visible-lg">
+                <br>
+                <div align="left">
+                <i class="fa fa-reply"></i> 分享至：
+                <script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1db685b4fb16a"></script>
+                <i class="fa fa-weibo"></i><a class="-mob-share-weibo" href="###">  微博  </a>
+                <i class="fa fa-weixin"></i><a class="-mob-share-weixin" href="###">  微信  </a>
+                <i class="fa fa-share-alt"></i> <a class="-mob-share-qzone" href="###">  空间  </a>
+                <i class="fa fa-qq"></i><a class="-mob-share-qq" href="###">  QQ </a>
+                <br>
+                </div>
+                <br>
+                <!--MOB SHARE END-->
+                
+
+                <!-- 代码1：放在页面需要展示的位置  -->
+                <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+                <div align="center"><div id="cyReward" sid="或许能助你提高效率的iOS使用技巧（1）" role="cylabs" data-use="reward"></div>
+                </section>  
+
+                <hr>        
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/12/25/Defragmentation/" data-toggle="tooltip" data-placement="top" title="Defragmentation Homework">下一篇 &rarr;</a>
+                        </li>
+                    
+                </ul>
+                <hr>
+                
+                    <!-- 畅言评论框 start -->
+                        <div><font size="-2">* 提示 | 本网站评论系统自2017年5月7日由<a href="http://duoshuo.com">多说</a>更换为<a href="http://changyan.sohu.com">畅言</a>。因迁移数据表情/头像显示错误，故未予显示，尽请谅解。</font></div>
+                                            
+                        <div id="SOHUCS" sid="或许能助你提高效率的iOS使用技巧（1）" ></div>
+                        <font size="-1">
+                        <script type="text/javascript"> 
+                        (function(){ 
+                        var appid = 'cyt02OGnc'; 
+                        var conf = 'prod_7e0db821537380a6fa9de8521d39aab6'; 
+                        var width = window.innerWidth || document.documentElement.clientWidth; 
+                        if (width < 960) { 
+                        window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+                        </font>
+                    <!-- 畅言评论框 end -->
+                    <!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+                    <!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+                    <!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+                    <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+                    <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyt02OGnc"></script>
+                 
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">标签</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#效率" title="效率">效率</a>
+                        
+                          <a class="tag" href="/tags/#iOS" title="iOS">iOS</a>
+                        
+                    </div>
+                </section>
+                
+
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/itaowei">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://coding.net/u/itaowei">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-code fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="mailto:taowei86@163.com?subject=来自itaowei.cn的朋友的反馈o(*￣▽￣*)ブ&body=itaowei:你好！我浏览了你的网站之后，">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://paypal.me/taowei">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 2016-2017 陶玮
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a><br>
+                    <!--iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe-->
+                    <a href="http://www.miitbeian.gov.cn/">沪ICP备16014180号</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://itaowei.cn/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!--Wechat Qcode-->
+<section class="visible-md visible-lg">
+<div class = "am-show-md-up">
+<div class="side-bar"> 
+  <a href="#" class="am-icon-weixin am-icon-md">微信<div class="chat-tips"><i></i><img style="width:138px;height:138px;" src="/img/wechat.jpg" alt="微信公众号"></div></a> 
+</div>
+</div>
+</section>
+
+
+
+<!-- Baidu Tongji -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6e6d2788ab579c35c9f8a086a4dc037";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Side Catalog -->
+
+
+
+<!-- Image to hack wechat -->
+<div align="center">
+<img src="img/icon_wechat.jpg" width="0" height="0" /><!--http://itaowei.cn/-->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+</div>
+</body>
+
+</html>
