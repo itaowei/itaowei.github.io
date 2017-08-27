@@ -187,7 +187,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="Project5-Defragmentation"><a href="#Project5-Defragmentation" class="headerlink" title="Project5: Defragmentation"></a>Project5: Defragmentation</h1><hr>
+                <font style="line-height:1.5;"><h1 id="Project5-Defragmentation"><a href="#Project5-Defragmentation" class="headerlink" title="Project5: Defragmentation"></a>Project5: Defragmentation</h1><hr>
 <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><ul>
 <li><code>frag</code>: 输入的<fragmented disk="" file="">文件.</fragmented></li>
 <li><code>defrag</code>: 输出的<defragmented disk="" file="">文件.</defragmented></li>
@@ -212,7 +212,7 @@
 </ol>
 <p>的<code>inode_buffer</code>数组，存放一级间接索引时的索引块，并按照<code>offset_dtblk</code>的顺序进行排序，方便调用函数<code>fseek()</code>读取<code>frag</code>文件时，尽可能地少用<code>SEEK_SET</code>而用<code>SEEK_CUR</code>，提高<code>fseek()</code>的使用效率。并按照读取顺序，连续地依次存储在<code>defrag</code>的数据区域中。其中结构体中的num用于保存<code>frag</code>中间接索引的顺序，方便标识对应的<code>offset_dtblk</code>，在存储至<code>dafrag</code>时，<code>num</code>也用于表示指针位置。</p>
 <p><em>作业来自  <a href="http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html" target="_blank" rel="external">http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html</a></em></p>
-
+</font>
                 <!--MOB SHARE BEGIN-->
                 <section class="visible-md visible-lg">
                 <br>
