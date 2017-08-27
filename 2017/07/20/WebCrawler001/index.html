@@ -191,7 +191,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <font style="line-height:1.5;"><blockquote>
+                <font style="line-height:2.5;"><blockquote>
 <p>本文针对特定网页，在服务器上定时执行Python脚本获取信息，于网页内容更新时触发邮件提醒。（本文针对初学者，因为我就是刚接触的：P）<br>PS：代码在最后：）</p>
 </blockquote>
 <p><strong>1. 【抓内容】明确网页中要抓取的内容，采用<a href="https://www.crummy.com/software/BeautifulSoup/" target="_blank" rel="external">Beautiful Soup</a>（Python爬虫利器）库进行抓取</strong><br>举例：通过浏览器的开发者工具，选中要抓取的部分，获得其标签，如下图，其标签为<code>div.post-content-preview</code>，后续可以使用<code>soup.select(div.post-content-preview)</code><br><img src="01.png" alt="网页标签查看"><br><em><a href="http://www.cnblogs.com/yizhenfeng168/p/6979339.html" target="_blank" rel="external">参考 | python爬虫：BeautifulSoup 使用select方法详解</a></em></p>
