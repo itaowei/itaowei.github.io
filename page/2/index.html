@@ -93,14 +93,14 @@
 
                         
                         <li>
-                            <a href="/archives/">汇总</a>
+                            <a href="/tags/">标签</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">标签</a>
+                            <a href="/archives/">汇总</a>
                         </li>
                         
                     
@@ -177,6 +177,30 @@
             
                 <!-- Main Content -->
 
+
+<div class="post-preview">
+
+    <a href="/2017/07/20/WebCrawler001/">
+        <h2 class="post-title">
+            爬虫 | 网页更新时邮件提醒（新手）
+        </h2>
+        <h3 class="post-subtitle">
+            来自一场焦灼的等待
+        </h3>
+        <div class="post-content-preview">
+            
+本文针对特定网页，在服务器上定时执行Python脚本获取信息，于网页内容更新时触发邮件提醒。（本文针对初学者，因为我就是刚接触的：P）PS：代码在最后：）
+
+1. 【抓内容】明确网页中要抓取的内容，采用Beautiful Soup（Python爬虫利器）库进行抓取举例：通过浏览器的开发者工具，选中要抓取的部分，获得其标签，如下图，其标签为div.post-content-preview，后......
+        </div>
+    </a>
+    <p class="post-meta">
+        陶玮 写于
+        2017-07-20
+    </p>
+
+</div>
+<hr>
 
 <div class="post-preview">
 
@@ -288,33 +312,6 @@ begin_data用于记录data bl......
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/2015/12/13/sad001/">
-        <h2 class="post-title">
-            吐槽 | 快递给我的悲伤那么大
-        </h2>
-        <h3 class="post-subtitle">
-            这是我与快递的事 又多又杂的事
-        </h3>
-        <div class="post-content-preview">
-            看到这条推送的时候，我想好好整理我与快递的事儿。
-
-
-因为是个人体验与切身感受，我只能保证真实，然后尽可能客观，如有言辞不当，还请多多指教。
-
-正如柴静在《穹顶之下》中说，那是她与雾霾的私人恩怨。我想，我叙述的也只是我与快递的私人恩怨吧。
-故事从（这学期）开学前一天说起，当我坐在从虹桥火车站回校的公交上，京东快递员给我打了个电话，说让我今晚几点前去大活（大学生活动中心）取快递，语气肯定，我想......
-        </div>
-    </a>
-    <p class="post-meta">
-        陶玮 写于
-        2015-12-13
-    </p>
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -325,6 +322,10 @@ begin_data用于记录data bl......
             <a href="/">&larr; 上一页</a>
         </li>
     
+    
+        <li class="next">
+            <a href="/page/3/">下一页 &rarr;</a>
+        </li>
     
 </ul>
 
@@ -350,19 +351,19 @@ begin_data用于记录data bl......
                     <div class="tags">
                         
                             
+                            <a href="/tags/#随笔" title="随笔" rel="2">随笔</a>
+                            
+                        
+                            
+                            <a href="/tags/#视频" title="视频" rel="2">视频</a>
+                            
+                        
+                            
                             <a href="/tags/#产品" title="产品" rel="1">产品</a>
                             
                         
                             
                             <a href="/tags/#人工智能" title="人工智能" rel="1">人工智能</a>
-                            
-                        
-                            
-                            <a href="/tags/#电影" title="电影" rel="1">电影</a>
-                            
-                        
-                            
-                            <a href="/tags/#coding" title="coding" rel="1">coding</a>
                             
                         
                             
@@ -378,11 +379,11 @@ begin_data用于记录data bl......
                             
                         
                             
-                            <a href="/tags/#学生工作" title="学生工作" rel="1">学生工作</a>
+                            <a href="/tags/#电影" title="电影" rel="1">电影</a>
                             
                         
                             
-                            <a href="/tags/#难忘" title="难忘" rel="1">难忘</a>
+                            <a href="/tags/#coding" title="coding" rel="1">coding</a>
                             
                         
                             
@@ -402,19 +403,19 @@ begin_data用于记录data bl......
                             
                         
                             
+                            <a href="/tags/#学生工作" title="学生工作" rel="1">学生工作</a>
+                            
+                        
+                            
+                            <a href="/tags/#难忘" title="难忘" rel="1">难忘</a>
+                            
+                        
+                            
                             <a href="/tags/#调查" title="调查" rel="1">调查</a>
                             
                         
                             
                             <a href="/tags/#吐槽" title="吐槽" rel="1">吐槽</a>
-                            
-                        
-                            
-                            <a href="/tags/#随笔" title="随笔" rel="1">随笔</a>
-                            
-                        
-                            
-                            <a href="/tags/#视频" title="视频" rel="1">视频</a>
                             
                         
                     </div>
@@ -556,7 +557,7 @@ begin_data用于记录data bl......
 
                 
                     <li>
-                        <a target="_blank"  href="https://coding.net/u/itaowei">
+                        <a target="_blank"  href="https://dev.tencent.com/u/itaowei">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-code fa-stack-1x fa-inverse"></i>
@@ -591,7 +592,7 @@ begin_data用于记录data bl......
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; 2016-2018 陶玮
+                    Copyright &copy; 2016-2019 陶玮
                     <br>
                     Theme by <a href="https://huangxuan.me">Hux</a> 
                     <span style="display: inline-block; margin: 0 5px;">
