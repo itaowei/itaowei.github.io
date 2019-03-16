@@ -2,12 +2,12 @@
 <html lang="ch">
 
 <!-- Head tag -->
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="陶玮的个人主页">
-    <meta name="keyword"  content="陶玮">
+    <meta name="keyword" content="陶玮">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <title>
@@ -93,14 +93,14 @@
 
                         
                         <li>
-                            <a href="/tags/">标签</a>
+                            <a href="/archives/">汇总</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archives/">汇总</a>
+                            <a href="/tags/">标签</a>
                         </li>
                         
                     
@@ -154,7 +154,7 @@
         background-image: url('homework161225.jpg')
     }
 </style>
-<header class="intro-header" >
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -189,8 +189,8 @@
 
                 <font style="line-height:2.5;"><h1 id="Project5-Defragmentation"><a href="#Project5-Defragmentation" class="headerlink" title="Project5: Defragmentation"></a>Project5: Defragmentation</h1><hr>
 <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><ul>
-<li><code>frag</code>: 输入的<fragmented disk="" file="">文件.</fragmented></li>
-<li><code>defrag</code>: 输出的<defragmented disk="" file="">文件.</defragmented></li>
+<li><code>frag</code>: 输入的<fragmented disk file>文件.</fragmented></li>
+<li><code>defrag</code>: 输出的<defragmented disk file>文件.</defragmented></li>
 </ul>
 <ol>
 <li>首先将boot block从<code>frag</code>拷贝至<code>defrag</code>。</li>
@@ -202,16 +202,16 @@
 <li>注：<code>assert()</code>函数主要用于调试。</li>
 </ol>
 <hr>
-<h2 id="Function-indirect"><a href="#Function-indirect" class="headerlink" title="Function: indirect()"></a>Function: indirect()</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">indirect</span><span class="params">(<span class="keyword">int</span> offset)</span></span></div><div class="line">&#123;   <span class="comment">// this function is used to deal with inodes which have pointers to indirect blocks </span></div><div class="line">	assert(fseek(frag, (offset - offset_frag) * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">	offset_frag = offset + <span class="number">1</span>;</div><div class="line">	</div><div class="line">	<span class="comment">// initialize one-block buffer and store information which is similar to 'dblocks'</span></div><div class="line">	<span class="keyword">int</span> *blkbuf = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(blk_size);</div><div class="line">	assert(fread(blkbuf, blk_size, <span class="number">1</span>, frag) == <span class="number">1</span>);</div><div class="line"></div><div class="line">	<span class="comment">// initialize 'buffer' which is used to store data block information and 'node_buffer'(it has been described above)</span></div><div class="line">	<span class="keyword">int</span> *buffer = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(blk_size);</div><div class="line">	<span class="built_in">memset</span>(buffer, <span class="number">0</span>, blk_size);</div><div class="line">	<span class="built_in">memset</span>(node_buffer, <span class="number">0</span>, <span class="keyword">sizeof</span>(*node_buffer));</div><div class="line"></div><div class="line">	<span class="comment">// n: number of indirect pointers in the one block </span></div><div class="line">	<span class="keyword">int</span> n = (data_blk_num &gt; blk_size/<span class="keyword">sizeof</span>(<span class="keyword">int</span>)) ? blk_size/<span class="keyword">sizeof</span>(<span class="keyword">int</span>) : data_blk_num;</div><div class="line">	</div><div class="line">	<span class="comment">// 'node_buffer' has the value of pointers in this block and its identity</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">	&#123;</div><div class="line">		node_buffer[i].num = i;</div><div class="line">		node_buffer[i].offset_dtblk = blkbuf[i];</div><div class="line">		<span class="comment">// let the 'blkbuf' has new value which will be used in the 'defrag'</span></div><div class="line">		blkbuf[i] = offset_defrag + i;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// the contents of the array 'node_buffer' are sorted</span></div><div class="line">	qsort(node_buffer, n, <span class="keyword">sizeof</span>(node), cmp);</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">	&#123;</div><div class="line">		assert(fseek(frag, (node_buffer[i].offset_dtblk - offset_frag) * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">		offset_frag = node_buffer[i].offset_dtblk + <span class="number">1</span>;</div><div class="line"></div><div class="line">		<span class="comment">// in the 1st time</span></div><div class="line">		<span class="keyword">if</span>(i == <span class="number">0</span>)</div><div class="line">		&#123;</div><div class="line">			assert(fseek(defrag, node_buffer[i].num * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		<span class="comment">// not in the 1st time</span></div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			assert(fseek(defrag, (node_buffer[i].num - node_buffer[i<span class="number">-1</span>].num - <span class="number">1</span>) * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">// read the data and store them to 'buffer'</span></div><div class="line">		assert(fread(buffer, blk_size, <span class="number">1</span>, frag) == <span class="number">1</span>);</div><div class="line">		</div><div class="line">		<span class="comment">// store them from 'buffer' to 'defrag'</span></div><div class="line">		assert(fwrite(buffer, blk_size, <span class="number">1</span>, defrag) == <span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// return to the position before using the function</span></div><div class="line">	assert(fseek(defrag, (n - <span class="number">1</span> - node_buffer[n<span class="number">-1</span>].num) * blk_size, SEEK_CUR) == <span class="number">0</span>);</div><div class="line">	</div><div class="line">	data_blk_num -= n;</div><div class="line">	offset_defrag += n;</div><div class="line"></div><div class="line">	<span class="built_in">free</span>(buffer);</div><div class="line"></div><div class="line">	<span class="comment">// the new indirect block</span></div><div class="line">	fwrite(blkbuf, blk_size, <span class="number">1</span>, defrag);</div><div class="line">	<span class="built_in">free</span>(blkbuf);</div><div class="line"></div><div class="line">	offset_defrag++;</div><div class="line">	<span class="keyword">return</span> offset_defrag<span class="number">-1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Function-indirect"><a href="#Function-indirect" class="headerlink" title="Function: indirect()"></a>Function: indirect()</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">indirect</span><span class="params">(<span class="keyword">int</span> offset)</span></span></span><br><span class="line"><span class="function"></span>&#123;   <span class="comment">// this function is used to deal with inodes which have pointers to indirect blocks </span></span><br><span class="line">	assert(fseek(frag, (offset - offset_frag) * blk_size, SEEK_CUR) == <span class="number">0</span>);</span><br><span class="line">	offset_frag = offset + <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// initialize one-block buffer and store information which is similar to 'dblocks'</span></span><br><span class="line">	<span class="keyword">int</span> *blkbuf = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(blk_size);</span><br><span class="line">	assert(fread(blkbuf, blk_size, <span class="number">1</span>, frag) == <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// initialize 'buffer' which is used to store data block information and 'node_buffer'(it has been described above)</span></span><br><span class="line">	<span class="keyword">int</span> *buffer = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(blk_size);</span><br><span class="line">	<span class="built_in">memset</span>(buffer, <span class="number">0</span>, blk_size);</span><br><span class="line">	<span class="built_in">memset</span>(node_buffer, <span class="number">0</span>, <span class="keyword">sizeof</span>(*node_buffer));</span><br><span class="line"></span><br><span class="line">	<span class="comment">// n: number of indirect pointers in the one block </span></span><br><span class="line">	<span class="keyword">int</span> n = (data_blk_num &gt; blk_size/<span class="keyword">sizeof</span>(<span class="keyword">int</span>)) ? blk_size/<span class="keyword">sizeof</span>(<span class="keyword">int</span>) : data_blk_num;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 'node_buffer' has the value of pointers in this block and its identity</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		node_buffer[i].num = i;</span><br><span class="line">		node_buffer[i].offset_dtblk = blkbuf[i];</span><br><span class="line">		<span class="comment">// let the 'blkbuf' has new value which will be used in the 'defrag'</span></span><br><span class="line">		blkbuf[i] = offset_defrag + i;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// the contents of the array 'node_buffer' are sorted</span></span><br><span class="line">	qsort(node_buffer, n, <span class="keyword">sizeof</span>(node), cmp);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		assert(fseek(frag, (node_buffer[i].offset_dtblk - offset_frag) * blk_size, SEEK_CUR) == <span class="number">0</span>);</span><br><span class="line">		offset_frag = node_buffer[i].offset_dtblk + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// in the 1st time</span></span><br><span class="line">		<span class="keyword">if</span>(i == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			assert(fseek(defrag, node_buffer[i].num * blk_size, SEEK_CUR) == <span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// not in the 1st time</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			assert(fseek(defrag, (node_buffer[i].num - node_buffer[i<span class="number">-1</span>].num - <span class="number">1</span>) * blk_size, SEEK_CUR) == <span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// read the data and store them to 'buffer'</span></span><br><span class="line">		assert(fread(buffer, blk_size, <span class="number">1</span>, frag) == <span class="number">1</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// store them from 'buffer' to 'defrag'</span></span><br><span class="line">		assert(fwrite(buffer, blk_size, <span class="number">1</span>, defrag) == <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// return to the position before using the function</span></span><br><span class="line">	assert(fseek(defrag, (n - <span class="number">1</span> - node_buffer[n<span class="number">-1</span>].num) * blk_size, SEEK_CUR) == <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	data_blk_num -= n;</span><br><span class="line">	offset_defrag += n;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">free</span>(buffer);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// the new indirect block</span></span><br><span class="line">	fwrite(blkbuf, blk_size, <span class="number">1</span>, defrag);</span><br><span class="line">	<span class="built_in">free</span>(blkbuf);</span><br><span class="line"></span><br><span class="line">	offset_defrag++;</span><br><span class="line">	<span class="keyword">return</span> offset_defrag<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>代码上有详实的注释啦！  ⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄<br>我就不写啦   (•̀ᴗ•́)و ̑̑<br>重点在下面啦 ( *￣▽￣)</p>
 <hr>
 <h2 id="Efficiency-Optimization"><a href="#Efficiency-Optimization" class="headerlink" title="Efficiency Optimization"></a>Efficiency Optimization</h2><ol>
 <li>本来准备用递归调用函数来处理简介索引的，但考虑到递归算法通常耗时较大，而且本次作业中最多只有三级间接索引，是有限次数的。所以只写了一级间接索引的处理函数，二级，三级间接索引进行转化，for循环调用<code>indirect()</code>即可。</li>
-<li>创建了结构体如下<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// this structure helps using function 'fseek' efficiently</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> NODE</div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> offset_dtblk;	<span class="comment">// offset of pointers to data blocks</span></div><div class="line">	<span class="keyword">int</span> num;			<span class="comment">// number indentify the 'offset_dtblk'</span></div><div class="line">&#125;node;</div></pre></td></tr></table></figure>
+<li>创建了结构体如下<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this structure helps using function 'fseek' efficiently</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">NODE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> offset_dtblk;	<span class="comment">// offset of pointers to data blocks</span></span><br><span class="line">	<span class="keyword">int</span> num;			<span class="comment">// number indentify the 'offset_dtblk'</span></span><br><span class="line">&#125;node;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>的<code>inode_buffer</code>数组，存放一级间接索引时的索引块，并按照<code>offset_dtblk</code>的顺序进行排序，方便调用函数<code>fseek()</code>读取<code>frag</code>文件时，尽可能地少用<code>SEEK_SET</code>而用<code>SEEK_CUR</code>，提高<code>fseek()</code>的使用效率。并按照读取顺序，连续地依次存储在<code>defrag</code>的数据区域中。其中结构体中的num用于保存<code>frag</code>中间接索引的顺序，方便标识对应的<code>offset_dtblk</code>，在存储至<code>dafrag</code>时，<code>num</code>也用于表示指针位置。</p>
-<p><em>作业来自  <a href="http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html" target="_blank" rel="external">http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html</a></em></p>
+<p><em>作业来自  <a href="http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html" target="_blank" rel="noopener">http://ybwu.org/ecnu-oslabs/projects/defragmentation/docs/defragmentation.html</a></em></p>
 </font>
                 <!--MOB SHARE BEGIN-->
                 <section class="visible-md visible-lg">
@@ -232,7 +232,7 @@
                 <!-- 代码1：放在页面需要展示的位置  -->
                 <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
                 <div align="center"><div id="cyReward" sid="Defragmentation Homework" role="cylabs" data-use="reward"></div>
-                </section>  
+                </div></section>  
 
                 <hr>        
 
@@ -253,7 +253,7 @@
                     <!-- 畅言评论框 start -->
                         <div><font size="-2">* 提示 | 本网站评论系统自2017年5月7日由<a href="https://duoshuo.com">多说</a>更换为<a href="https://changyan.sohu.com">畅言</a>。因迁移数据表情/头像显示错误，故未予显示，尽请谅解。</font></div>
                                             
-                        <div id="SOHUCS" sid="Defragmentation Homework" ></div>
+                        <div id="SOHUCS" sid="Defragmentation Homework"></div>
                         <font size="-1">
                         <script type="text/javascript"> 
                         (function(){ 
@@ -365,7 +365,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://github.com/itaowei">
+                        <a target="_blank" href="https://github.com/itaowei">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -376,7 +376,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://dev.tencent.com/u/itaowei">
+                        <a target="_blank" href="https://dev.tencent.com/u/itaowei">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-code fa-stack-1x fa-inverse"></i>
@@ -387,7 +387,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="mailto:taowei86@163.com?subject=来自itaowei.cn的朋友的反馈o(*￣▽￣*)ブ&body=itaowei:你好！我浏览了你的网站之后，">
+                        <a target="_blank" href="mailto:taowei86@163.com?subject=来自itaowei.cn的朋友的反馈o(*￣▽￣*)ブ&body=itaowei:你好！我浏览了你的网站之后，">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
@@ -398,7 +398,7 @@
 
                 
                     <li>
-                        <a target="_blank"  href="https://paypal.me/taowei">
+                        <a target="_blank" href="https://paypal.me/taowei">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
@@ -495,7 +495,7 @@
 
 <!--Wechat Qcode-->
 <section class="visible-md visible-lg">
-<div class = "am-show-md-up">
+<div class="am-show-md-up">
 <div class="side-bar"> 
   <a href="#" class="am-icon-weixin am-icon-md">微信<div class="chat-tips"><i></i><img style="width:138px;height:138px;" src="/img/wechat.jpg" alt="微信公众号"></div></a> 
 </div>
